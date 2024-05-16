@@ -1,0 +1,23 @@
+# fly.toml app configuration file generated for fastrepl-proxy on 2024-05-16T09:36:21+09:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'fastrepl-proxy'
+primary_region = 'sjc'
+
+[build]
+  Dockerfile = 'Dockerfile'
+
+[http_service]
+  internal_port = 4000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 1
+  processes = ['app']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 2
