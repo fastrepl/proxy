@@ -90,3 +90,6 @@ router_settings:
   redis_port: os.environ/REDIS_PORT
 general_settings:
   master_key: os.environ/MASTER_KEY
+  alerting:
+    - slack
+  alerting_threshold: 120
