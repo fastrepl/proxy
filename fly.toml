@@ -9,6 +9,9 @@ primary_region = 'sjc'
 [build]
   Dockerfile = 'Dockerfile'
 
+[deploy]
+  strategy = "bluegreen"
+
 [http_service]
   internal_port = 4000
   force_https = true
