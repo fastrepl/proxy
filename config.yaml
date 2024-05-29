@@ -130,3 +130,5 @@ general_settings:
   alerting:
     - slack
   alerting_threshold: 120
+environment_variables:
+  AZURE_API_VERSION: 2024-05-01-preview
