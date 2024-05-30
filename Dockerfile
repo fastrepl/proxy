@@ -1,4 +1,4 @@
-FROM ghcr.io/berriai/litellm:main-v1.38.8-stable
+FROM ghcr.io/berriai/litellm:main-v1.39.2
 
 WORKDIR /app
 COPY config.yaml .
