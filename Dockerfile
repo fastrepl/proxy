@@ -1,6 +1,5 @@
-FROM ghcr.io/berriai/litellm:main-v1.39.6
+FROM ghcr.io/berriai/litellm:main-v1.40.0
 
-WORKDIR /app
 COPY config.yaml .
 
 EXPOSE 4000/tcp
