@@ -119,6 +119,8 @@ model_list:
       api_key: os.environ/ANYSCALE_API_KEY
 litellm_settings:
   drop_params: true
+  callbacks:
+    - otel
 router_settings:
   routing_strategy: simple-shuffle
   timeout: 60
