@@ -117,7 +117,7 @@ model_list:
     litellm_params:
       model: anyscale/mistralai/Mixtral-8x22B-Instruct-v0.1
       api_key: os.environ/ANYSCALE_API_KEY
-  - model_name: mixtral-8x22B
+  - model_name: mistral-7b
     litellm_params:
       model: fireworks_ai/mistral-7b-instruct-v3
       api_key: os.environ/FIREWORKS_API_KEY
