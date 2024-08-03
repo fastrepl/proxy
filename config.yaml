@@ -109,17 +109,9 @@ model_list:
       api_key: os.environ/ANTHROPIC_API_KEY
       rpm: 1000
       tpm: 40000
-  - model_name: llama-3-70b
+  - model_name: llama-3.1-8b
     litellm_params:
-      model: anyscale/meta-llama/Meta-Llama-3-70B-Instruct
-      api_key: os.environ/ANYSCALE_API_KEY
-  - model_name: mixtral-8x22B
-    litellm_params:
-      model: anyscale/mistralai/Mixtral-8x22B-Instruct-v0.1
-      api_key: os.environ/ANYSCALE_API_KEY
-  - model_name: mistral-7b
-    litellm_params:
-      model: fireworks_ai/mistral-7b-instruct-v3
+      model: fireworks_ai/accounts/fireworks/models/llama-v3p1-8b-instruct
       api_key: os.environ/FIREWORKS_API_KEY
 litellm_settings:
   drop_params: true
