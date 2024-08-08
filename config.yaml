@@ -40,6 +40,20 @@ model_list:
       api_key: os.environ/AZURE_API_KEY_6
       rpm: 900
       tpm: 150000
+  - model_name: gpt-4o
+    litellm_params:
+      model: azure/fastrepl-7-gpt-4o-2024-05-13
+      api_base: https://fastrepl-7.openai.azure.com
+      api_key: os.environ/AZURE_API_KEY_7
+      rpm: 2700
+      tpm: 450000
+  - model_name: gpt-4o
+    litellm_params:
+      model: azure/fastrepl-8-gpt-4o-2024-05-13
+      api_base: https://fastrepl-8.openai.azure.com
+      api_key: os.environ/AZURE_API_KEY_8
+      rpm: 2700
+      tpm: 450000
   - model_name: text-embedding-3-small
     litellm_params:
       model: azure/fastrepl-1-text-embedding-3-small
