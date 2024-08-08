@@ -1,20 +1,8 @@
 ---
 model_list:
-  - model_name: gpt-3.5-turbo
-    litellm_params:
-      model: openai/gpt-3.5-turbo-0125
-      api_key: os.environ/OPENAI_API_KEY
-      rpm: 500
-      tpm: 60000
   - model_name: gpt-4o
     litellm_params:
       model: openai/gpt-4o-2024-05-13
-      api_key: os.environ/OPENAI_API_KEY
-      rpm: 500
-      tpm: 30000
-  - model_name: gpt-4-turbo
-    litellm_params:
-      model: openai/gpt-4-turbo-2024-04-09
       api_key: os.environ/OPENAI_API_KEY
       rpm: 500
       tpm: 30000
@@ -24,13 +12,6 @@ model_list:
       api_key: os.environ/OPENAI_API_KEY
       rpm: 3000
       tpm: 1000000
-  - model_name: gpt-3.5-turbo
-    litellm_params:
-      model: azure/fastrepl-6-gpt-35-turbo-0125
-      api_base: https://fastrepl-6.openai.azure.com
-      api_key: os.environ/AZURE_API_KEY_6
-      rpm: 1440
-      tpm: 240000
   - model_name: gpt-4o
     litellm_params:
       model: azure/fastrepl-2-gpt-4o-2024-05-13
@@ -57,20 +38,6 @@ model_list:
       model: azure/fastrepl-6-gpt-4o-2024-05-13
       api_base: https://fastrepl-6.openai.azure.com
       api_key: os.environ/AZURE_API_KEY_6
-      rpm: 900
-      tpm: 150000
-  - model_name: gpt-4-turbo
-    litellm_params:
-      model: azure/fastrepl-3-gpt-4-turbo-2024-04-09
-      api_base: https://fastrepl-3.openai.azure.com
-      api_key: os.environ/AZURE_API_KEY_3
-      rpm: 480
-      tpm: 80000
-  - model_name: gpt-4-turbo
-    litellm_params:
-      model: azure/fastrepl-4-gpt-4-turbo-2024-04-09
-      api_base: https://fastrepl-4.openai.azure.com
-      api_key: os.environ/AZURE_API_KEY_4
       rpm: 900
       tpm: 150000
   - model_name: text-embedding-3-small
@@ -125,8 +92,6 @@ router_settings:
   redis_port: os.environ/REDIS_PORT
 general_settings:
   master_key: os.environ/MASTER_KEY
-  alerting:
-    - slack
-  alerting_threshold: 120
 environment_variables:
   AZURE_API_VERSION: 2024-05-01-preview
+  REDIS_SSL: 1
