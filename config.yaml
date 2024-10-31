@@ -1,115 +1,19 @@
----
 model_list:
   - model_name: gpt-4o
     litellm_params:
-      model: openai/gpt-4o-2024-05-13
+      model: openai/gpt-4o-2024-08-06
       api_key: os.environ/OPENAI_API_KEY
       rpm: 500
       tpm: 30000
-  - model_name: text-embedding-3-small
-    litellm_params:
-      model: openai/text-embedding-3-small
-      api_key: os.environ/OPENAI_API_KEY
-      rpm: 3000
-      tpm: 1000000
-  - model_name: gpt-4o
-    litellm_params:
-      model: azure/fastrepl-2-gpt-4o-2024-05-13
-      api_base: https://fastrepl-2.openai.azure.com
-      api_key: os.environ/AZURE_API_KEY_2
-      rpm: 900
-      tpm: 150000
-  - model_name: gpt-4o
-    litellm_params:
-      model: azure/fastrepl-3-gpt-4o-2024-05-13
-      api_base: https://fastrepl-3.openai.azure.com
-      api_key: os.environ/AZURE_API_KEY_3
-      rpm: 900
-      tpm: 150000
-  - model_name: gpt-4o
-    litellm_params:
-      model: azure/fastrepl-5-gpt-4o-2024-05-13
-      api_base: https://fastrepl-5.openai.azure.com
-      api_key: os.environ/AZURE_API_KEY_5
-      rpm: 900
-      tpm: 150000
-  - model_name: gpt-4o
-    litellm_params:
-      model: azure/fastrepl-6-gpt-4o-2024-05-13
-      api_base: https://fastrepl-6.openai.azure.com
-      api_key: os.environ/AZURE_API_KEY_6
-      rpm: 900
-      tpm: 150000
-  - model_name: gpt-4o
-    litellm_params:
-      model: azure/fastrepl-7-gpt-4o-2024-05-13
-      api_base: https://fastrepl-7.openai.azure.com
-      api_key: os.environ/AZURE_API_KEY_7
-      rpm: 2700
-      tpm: 450000
-  - model_name: gpt-4o
-    litellm_params:
-      model: azure/fastrepl-8-gpt-4o-2024-05-13
-      api_base: https://fastrepl-8.openai.azure.com
-      api_key: os.environ/AZURE_API_KEY_8
-      rpm: 2700
-      tpm: 450000
-  - model_name: text-embedding-3-small
-    litellm_params:
-      model: azure/fastrepl-1-text-embedding-3-small
-      api_base: https://fastrepl-1.openai.azure.com
-      api_key: os.environ/AZURE_API_KEY_1
-      tpm: 350000
-  - model_name: text-embedding-3-small
-    litellm_params:
-      model: azure/fastrepl-2-text-embedding-3-small
-      api_base: https://fastrepl-2.openai.azure.com
-      api_key: os.environ/AZURE_API_KEY_2
-      tpm: 350000
-  - model_name: text-embedding-3-small
-    litellm_params:
-      model: azure/fastrepl-3-text-embedding-3-small
-      api_base: https://fastrepl-3.openai.azure.com
-      api_key: os.environ/AZURE_API_KEY_3
-      tpm: 350000
-  - model_name: claude-3-haiku
-    litellm_params:
-      model: anthropic/claude-3-haiku-20240307
-      api_key: os.environ/ANTHROPIC_API_KEY
-      rpm: 1000
-      tpm: 100000
   - model_name: claude-3-sonnet
     litellm_params:
-      model: anthropic/claude-3-sonnet-20240229
+      model: anthropic/claude-3-5-sonnet-20241022
+      extra_headers: {"anthropic-version": "2023-06-01", "anthropic-beta": "prompt-caching-2024-07-31"}
       api_key: os.environ/ANTHROPIC_API_KEY
       rpm: 1000
       tpm: 80000
-  - model_name: claude-3-opus
-    litellm_params:
-      model: anthropic/claude-3-sonnet-20240229
-      api_key: os.environ/ANTHROPIC_API_KEY
-      rpm: 1000
-      tpm: 40000
-  - model_name: llama-3.1-8b
-    litellm_params:
-      model: fireworks_ai/accounts/fireworks/models/llama-v3p1-8b-instruct
-      api_key: os.environ/FIREWORKS_API_KEY
-  - model_name: llama-3.1-70b
-    litellm_params:
-      model: fireworks_ai/accounts/fireworks/models/llama-v3p1-70b-instruct
-      api_key: os.environ/FIREWORKS_API_KEY
-  # - model_name: llama-3.1-8b
-  #   litellm_params:
-  #     model: together_ai/meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo
-  #     api_key: os.environ/TOGETHER_API_KEY
-  # - model_name: llama-3.1-70b
-  #   litellm_params:
-  #     model: together_ai/meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo
-  #     api_key: os.environ/TOGETHER_API_KEY
 litellm_settings:
   drop_params: true
-  callbacks:
-    - otel
 router_settings:
   routing_strategy: simple-shuffle
   timeout: 60
@@ -119,5 +23,5 @@ router_settings:
 general_settings:
   master_key: os.environ/MASTER_KEY
 environment_variables:
-  AZURE_API_VERSION: 2024-05-01-preview
+  AZURE_API_VERSION: 2024-10-01-preview
   REDIS_SSL: 1
